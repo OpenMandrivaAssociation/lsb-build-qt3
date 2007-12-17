@@ -12,7 +12,6 @@ Source: 	ftp://ftp.freestandards.org/pub/lsb/lsbdev/released-3.1.0/source/lsb-bu
 Source1: 	ftp://ftp.trolltech.com/qt/source/qt-x11-free-%qtver.tar.bz2
 Patch0:		lsb-build-qt3-3.1.1-mandriva.patch
 URL:            http://www.linuxbase.org/build
-BuildRoot: 	%_tmppath/%name-%version-%release-root
 
 %description
 This package provides LSB qt3 building support for the
