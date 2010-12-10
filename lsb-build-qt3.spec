@@ -5,7 +5,7 @@
 Summary: 	LSB Build environment qt3 package
 Name: 		lsb-build-qt3
 Version: 	3.1.1
-Release: 	%mkrel 6
+Release: 	%mkrel 7
 License: 	GPL
 Group: 		Development/C++
 Source: 	ftp://ftp.freestandards.org/pub/lsb/lsbdev/released-3.1.0/source/lsb-build-qt3-%{version}.tar.bz2
