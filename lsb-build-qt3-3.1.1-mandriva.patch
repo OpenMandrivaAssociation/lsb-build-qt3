@@ -1,0 +1,35 @@
+--- lsb-build-qt3-3.1.1/linux-lsb-qt3/qmake.conf.mandriva	2006-04-21 16:10:15.000000000 +0200
++++ lsb-build-qt3-3.1.1/linux-lsb-qt3/qmake.conf	2006-06-23 22:08:52.000000000 +0200
+@@ -42,7 +42,7 @@ QMAKE_INCDIR		=
+ QMAKE_LIBDIR		=
+ #QMAKE_INCDIR_X11	= /usr/X11R6/include
+ #QMAKE_LIBDIR_X11	= /usr/X11R6/lib
+-QMAKE_INCDIR_QT		= $(QTDIR)/include
++QMAKE_INCDIR_QT		= /usr/include/lsb-build-base/qt3
+ QMAKE_LIBDIR_QT		= $(QTDIR)/lib
+ #QMAKE_INCDIR_OPENGL	= /usr/X11R6/include
+ #QMAKE_LIBDIR_OPENGL	= /usr/X11R6/lib
+--- lsb-build-qt3-3.1.1/qmake.mandriva	2006-03-30 16:46:31.000000000 +0200
++++ lsb-build-qt3-3.1.1/qmake	2006-06-23 22:10:37.000000000 +0200
+@@ -3,10 +3,18 @@
+ PRODUCT=`echo "$LSB_MODULES" | tr '[:lower:]' '[:upper:]'`
+ 
+ if [ "$PRODUCT" = "QT4" ]; then
+-    ${0}_lsb_qt4 "$@" -spec linux-lsb
++    QMAKE=${0}_lsb_qt4
++    SPEC="-spec /usr/lib/lsb-build-base/qt4/mkspecs/linux-lsb"
+ else
+-    export QTDIR=/opt/lsb
+-    ${0}_lsb_qt3 "$@" -spec /opt/lsb/mkspecs/linux-lsb-qt3
++    export QTDIR=/usr/lib/qt3
++    QMAKE=${0}_lsb_qt3
++    SPEC="-spec /usr/lib/lsb-build-base/qt3/mkspecs/linux-lsb-qt3"
+ fi
++
++if [ "$1" = "-project" ]; then
++    SPEC=""
++fi
++
++$QMAKE "$@" $SPEC
+ exit $?
+ 
