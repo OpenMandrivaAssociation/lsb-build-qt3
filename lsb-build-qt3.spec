@@ -11,7 +11,7 @@ Group: 		Development/C++
 Source: 	ftp://ftp.freestandards.org/pub/lsb/lsbdev/released-3.1.0/source/lsb-build-qt3-%{version}.tar.bz2
 Source1: 	ftp://ftp.trolltech.com/qt/source/qt-x11-free-%qtver.tar.bz2
 Patch0:		lsb-build-qt3-3.1.1-mandriva.patch
-URL:            http://www.linuxbase.org/build
+URL:            https://www.linuxbase.org/build
 BuildRoot: 	%_tmppath/%name-%version-%release-root
 BuildRequires: libx11-devel libxext-devel libxinerama-devel
 
