@@ -13,6 +13,7 @@ Source1: 	ftp://ftp.trolltech.com/qt/source/qt-x11-free-%qtver.tar.bz2
 Patch0:		lsb-build-qt3-3.1.1-mandriva.patch
 URL:            https://www.linuxbase.org/build
 BuildRoot: 	%_tmppath/%name-%version-%release-root
+BuildRequires:	make
 BuildRequires: libx11-devel libxext-devel libxinerama-devel
 
 %description
